@@ -23,17 +23,17 @@ var peopleData = []people{
 }
 
 func main() {
-	str, err := strconv.Atoi(os.Args[1])
+	input, err := strconv.Atoi(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
 	}
 	for _, person := range peopleData {
-		if str == person.id {
+		if input == person.id {
 			// fmt.Println(person)
 			fmt.Println(person.id, "name:", person.name, "address:", person.address, "work:", person.work, "motivation:", person.motivation)
 		}
 	}
-	if str <= 0 || str > len(peopleData) {
+	if input <= 0 || input > len(peopleData) {
 		fmt.Println("There is no person matching your input.")
 	}
 }
